@@ -5,7 +5,7 @@ import styles from "./styles.module.css";
 const FeatureList = [
   {
     title: "Free to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    Svg: require("@site/static/img/write.svg").default,
     description: (
       <>
         We will only use free and open-source tools.
@@ -20,29 +20,31 @@ const FeatureList = [
   },
   {
     title: "Production Ready",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    Svg: require("@site/static/img/network-security.svg").default,
     description: (
       <>
         Most tutorials only give a cannonical <code>Hello, World!</code>/
-        <code>mnist</code> example which can be difficult to adapt to production
-        requirements.
+        <code>mnist</code> example, which can be difficult to adapt to
+        production requirements.
         <br />
         <br />
         We (optionally) use AWS, and don't skip the details that take a toy
-        project to production-ready; with security, scale and relabilty in mind.
+        project to production-ready; with security, scale and reliability in
+        mind.
       </>
     ),
   },
   {
     title: "Comprehensive",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    Svg: require("@site/static/img/blueprint.svg").default,
     description: (
       <>
         Learn the skills to manage your own complete ML platform; from data
         management to ML experimentation, deployment and monitoring.
         <br />
         <br />
-        Using industry standard tools and best practices.
+        Every tutorial is hands-on, using industry-standard tools and best
+        practices.
       </>
     ),
   },
