@@ -4,6 +4,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import HomepageInstructor from "@site/src/components/HomepageInstructor";
 
 import styles from "./index.module.css";
 
@@ -15,11 +16,8 @@ function HomepageHeader() {
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
-          >
-            Docusaurus Tutorial - 5min ⏱️
+          <Link className="button button--secondary button--lg" to="/intro">
+            Get Started!
           </Link>
         </div>
       </div>
@@ -27,6 +25,7 @@ function HomepageHeader() {
   );
 }
 
+// https://freesvgillustration.com/illustrations/
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -37,6 +36,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <HomepageInstructor />
       </main>
     </Layout>
   );
