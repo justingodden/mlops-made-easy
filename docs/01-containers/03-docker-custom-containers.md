@@ -82,13 +82,13 @@ In the spirit of our [ethos](../about#motivation) to go beyond the `Hello, World
 
 We'll make a better looking web application and learn some more Dockerfile commands along the way.
 
-The purpose of this tutorial is not to learn Python, I assume some prerequisite skills, so we won't go into too much detail for the following script.
+The purpose of this tutorial is not to learn Python, I assume some pre-requisite skills, so we won't go into too much detail for the following script.
 
 ### The App
 
 We're using [Streamlit](https://streamlit.io/), which is a great tool for Python devs to quickly make a nice looking GUI without knowing web development. We're also using the [Video Game Sales](https://www.kaggle.com/datasets/gregorut/videogamesales) dataset on Kaggle.
 
-We've created a nice stacked bar chart that shows us total sales per comany, broken up by region, with a nice interactive slider to select how many of the top comanpanies you want to view on the chart.
+We've created a nice stacked bar chart that shows us total sales per company, broken up by region, with a nice interactive slider to select how many of the top companies you want to view on the chart.
 
 We've also made a nice line chart of total global sales per year.
 
@@ -168,7 +168,7 @@ CMD ["run", "app.py"]
 
 Now, we've just seen a few new commands.
 
-We know the `FROM` command, but this time we've used a `python` image. More specifically one with the `3.10-slim-buster` tag. This means it's packaged with Python version 3.10 and is based on the `debian:slim-buster` image, which is a very small Linux distrobution with only the essential packages installed so it has a smaller footprint and a quicker load up time.
+We know the `FROM` command, but this time we've used a `python` image. More specifically one with the `3.10-slim-buster` tag. This means it's packaged with Python version 3.10 and is based on the `debian:slim-buster` image, which is a very small Linux distribution with only the essential packages installed so it has a smaller footprint and a quicker load up time.
 
 The `USER` command specifies which Linux user to run the commands as. `root` user is needed to interact with `pip`. A Dockerfile's default user is whatever is specified in the image it inherits from. Specifying it here isn't strictly necessary, as I believe the `python` image runs as root, otherwise it wouldn't be able to use `pip`. Either way, it's nice to be explicit.
 
@@ -176,15 +176,15 @@ The `USER` command specifies which Linux user to run the commands as. `root` use
 
 `COPY <from> <to>` copies files from the host machine (your computer) into the container image. We've used `.` for both, meaning from whatever folder you're currently in right now on your computer, to the `/app/` directory in the container image. This will copy the `app.py` and `requirements.txt` files over.
 
-We've seen `RUN` before. We create a virtual environment, activate it, upgrade `pip` and install `streamlit` and `pandas.`
+We've seen `RUN` before. We create a virtual environment, activate it, upgrade `pip` and install `streamlit` and `pandas`.
 
 `streamlit` runs its web application on port `8501`. The `EXPOSE` command informs Docker that the container listens on the specified network ports at runtime. However, the `EXPOSE` command does not actually publish the port. It functions as a type of documentation between the person who builds the image and the person who runs the container, about which ports are intended to be published. To actually publish the port when running the container, we use the `-p` flag on `docker run`.
 
-As per best practices, we don't run the container with `root` privileges, we only used that to install some packes. Now we use the `USER` command to change to uid `1001` with only enough permissions to run the app.
+As per best practices, we don't run the container with `root` privileges, we only used that to install some packages. Now we use the `USER` command to change to uid `1001` with only enough permissions to run the app.
 
 `ENTRYPOINT` and `CMD` are very similar. In fact, they're also similar to `RUN`. They all issue commands, but do it in different ways and are used for different reasons. `RUN` executes commands in _shell form_ where the command is run in a shell (such as `/bin/sh/`) which executes the command (just like we would in a terminal). This is useful for installing packages for example. It looks like `pip install etc etc`.
 
-Whereas `ENTRYPOINT` and `CMD` are in _exec form_ which looks like ["pip", "install", "etc", "etc"]. These are not run through a shell, they are run through the specified binary directly. `ENTRYPOINT` is run first, then `CMD` is append onto it. `ENTRYPOINT` in not overridalbe, but `CMD` can be overriden when create a container from the image. This allows a baseline behaviour with `ENTRYPOINT` but with flexible configurations with `CMD`. An example might be that you have a application that runs a webserver from the command `webserver`, and it takes it as command-line arguments the location of the .html file and the port to expose. So you have write your `Dockerfile` as:
+Whereas `ENTRYPOINT` and `CMD` are in _exec form_ which looks like ["pip", "install", "etc", "etc"]. These are not run through a shell, they are run through the specified binary directly. `ENTRYPOINT` is run first, then `CMD` is appended onto it. `ENTRYPOINT` in not overridable, but `CMD` can be overriden when creating a container from the image. This allows a baseline behaviour with `ENTRYPOINT` but with flexible configurations with `CMD`. An example might be that you have a application that runs a webserver from the command `webserver`, and it takes in as command-line arguments the location of the .html file to serve and the port to expose. So you write your `Dockerfile` as:
 
 ```dockerfile
 ...
@@ -195,7 +195,7 @@ CMD ["--location", "/html/index.html", "--port", "8888"]
 This provides default values if the user doesn't want to change anything, but if they do, we can do as follows:
 
 ```bash
-docker run example-image --location other/file.html --port 9999
+docker run example-image --location /other/file.html --port 9999
 ```
 
 ### Dockerhub Repo
