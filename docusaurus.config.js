@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "MLOps Made Easy",
   tagline:
-    "Build an end-to-end Machine Learning platform. Powered by Open-Source.",
+    "Learn to build an end-to-end Machine Learning platform. Powered by Open-Source.",
   favicon: "img/icon.ico",
 
   // Set the production url of your site here
