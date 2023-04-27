@@ -9,18 +9,20 @@ const config = {
   title: "MLOps Made Easy",
   tagline:
     "Build an end-to-end Machine Learning platform. Powered by Open-Source.",
-  favicon: "img/favicon.ico",
+  favicon: "img/icon.ico",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://justingodden.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/mlops-made-easy/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "justingodden", // Usually your GitHub org/user name.
+  projectName: "mlops-made-easy", // Usually your repo name.
+  deploymentBranch: "gh-pages",
+  trailingSlash: false,
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -70,7 +72,7 @@ const config = {
         title: "MLOps Made Easy",
         logo: {
           alt: "Logo",
-          src: "img/logo.svg",
+          src: "img/machine-learning.png",
         },
         items: [
           {
@@ -79,9 +81,9 @@ const config = {
             position: "left",
             label: "Tutorials",
           },
-          // { to: "/blog", label: "Blog", position: "left" },
+          { to: "/about", label: "About", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/justingodden/mlops-made-easy",
             label: "GitHub",
             position: "right",
           },
@@ -91,11 +93,15 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
+            title: "Learn",
             items: [
               {
-                label: "Tutorial",
-                to: "/docs/intro",
+                label: "Tutorials",
+                to: "/intro",
+              },
+              {
+                label: "About",
+                to: "/about",
               },
             ],
           },
@@ -103,34 +109,43 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                label: "Arena ML",
+                href: "https://github.com/arenaml",
               },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
+              // {
+              //   label: "Discord",
+              //   href: "https://discordapp.com/invite/docusaurus",
+              // },
+              // {
+              //   label: "Twitter",
+              //   href: "https://twitter.com/docusaurus",
+              // },
             ],
           },
           {
-            title: "More",
+            title: "Contact",
             items: [
+              // {
+              //   label: "Blog",
+              //   to: "/blog",
+              // },
               {
-                label: "Blog",
-                to: "/blog",
+                label: "LinkedIn",
+                href: "https://linkedin.com/in/justingodden/",
               },
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/justingodden/mlops-made-easy",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} MLOps Made Easy, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Justin Godden`,
+      },
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
       prism: {
         theme: lightCodeTheme,
