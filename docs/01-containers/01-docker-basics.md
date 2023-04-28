@@ -8,7 +8,7 @@ import im from "./img/container-vs-vm.png";
 
 Docker is a software tool (a CLI and a [daemon](<https://en.wikipedia.org/wiki/Daemon_(computing)>)) that can create and manage software containers.
 
-## What and why of containers
+## What and Why of Containers
 
 Containers solve the age-old problem of 'it works on my machine'. Software has become so complex with abstractions and dependencies that there are so many points of failure - wrong OS version, wrong system dependencies, wrong Python interpreter version, wrong Python library version etc.
 
@@ -41,7 +41,7 @@ Below is the shell command to install docker and its requirements on a Debian-ba
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-## Run your first container
+## Run Your First Container
 
 Okay, now that we have Docker installed, let's run our first container using the command below in your terminal.
 
@@ -65,7 +65,7 @@ If it worked correctly, you should see some output like below.
 ...
 ```
 
-Great! We just ran our first container. `docker run` told Docker we want to run a container. We gave the running container a name using `--name mycontainer` so that we can identify the container later. And finally, `nginx` told docker that we want to run the 'nginx' container image, which docker downloaded from [dockerhub](https://hub.docker.com/), which we will discuss on the [next page](container-registries).
+Great! We just ran our first container. `docker run` told Docker we want to run a container. We gave the running container a name using `--name mycontainer` so that we can identify the container later. And finally, `nginx` told docker that we want to run the 'nginx' container image, which docker downloaded from [Dockerhub](https://hub.docker.com/), which we will discuss on the [next page](container-registries).
 
 Press `Ctrl+C` to exit out of the running Docker process, and let's delete the container with the command below so that we can recreate it with a few more features.
 
@@ -73,7 +73,7 @@ Press `Ctrl+C` to exit out of the running Docker process, and let's delete the c
 docker rm mycontainer
 ```
 
-## Port forwarding
+## Port Forwarding
 
 Nginx is a webserver (as well as a reverse proxy) which serves static web pages. By default it serves its web content on port 80. We can map our machine's port 8080 to port 80 inside the container using the flag `-p 8080:80`. We can also use the `-d` flag to run the container in the background to free up our terminal. Let's spin up the container again with the command below.
 
@@ -89,7 +89,7 @@ We can use the command below to list some details on our running containers.
 docker ps
 ```
 
-## Exec into the container
+## Exec into the Container
 
 We can attach our terminal to a shell inside the container using the command below. `docker exec` allows you to execute a command inside the terminal, and the flags `-it` attach our shell to the shell's input/output inside the container. We give the name of the container, `mycontainer` that we want to execute a command in and finally give the command we want to execute, `sh`, opening up a shell.
 

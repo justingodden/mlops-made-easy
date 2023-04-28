@@ -10,7 +10,7 @@ First to clear up some terminology, a container 'image' is the definition, or _b
 
 In the [previous page](docker-basics) we used the `nginx` container _image_ to instantiate our own running container that we named `mycontainer`. We could have similarly created a bunch of running containers called `mycontainer1`, `mycontainer2`, `...`, etc. all from that single _image_ definition.
 
-## Container image address
+## Container Image Address
 
 The format for specifying the location of a container image that you want to create a container from is `<registry-address>/<namespace>/<image-name>:<image-tag>`
 
@@ -22,7 +22,7 @@ docker pull container-registry-website.com:6000/mycontainers/container1:v1.0
 
 :::info Note
 
-The above command obviously will not work, so don't run it in your termimal. There's no container registry at `container-registry-website.com`, unless you decide to make one yourself!
+The above command obviously will not work, so don't run it in your terminal. There's no container registry at `container-registry-website.com`, unless you decide to make one yourself!
 
 :::
 
@@ -32,13 +32,13 @@ So where did the Nginx image come from in the previous page's command `docker ru
 
 Well if you don't specify some details, Docker has defaults. [Dockerhub](https://hub.docker.com/) is a container image registry that Docker manage, and if you don't specify a registry address, it assumed you want to access there. The actual registry address is `docker.io`.
 
-Dockerhub uses the `namespace` part of the address to specify which user owns the image. But if you leave out this part too, docker assumes you want their own official images managed by Docker. This technically is under the `library` namespace. The `image-name` is `nginx`, and that still stays. Finally, if you don't specify a `image-tag`, docker assumed you want the image tagged `latest`. If there isn't an image tagged `latest` in the reposity then Docker will throw an error. Similarly when you build an image (which we will see in the [next lesson](docker-custom-containers)) and don't specift a tag, `latest` will be used by default.
+Dockerhub uses the `namespace` part of the address to specify which user owns the image. But if you leave out this part too, docker assumes you want their own official images managed by Docker. This technically is under the `library` namespace. The `image-name` is `nginx`, and that still stays. Finally, if you don't specify a `image-tag`, docker assumed you want the image tagged `latest`. If there isn't an image tagged `latest` in the repository then Docker will throw an error. Similarly when you build an image (which we will see in the [next lesson](docker-custom-containers)) and don't specify a tag, `latest` will be used by default.
 
 So `docker pull nginx` is actually an alias for `docker pull docker.io/library/nginx:latest`.
 
-If you want to get an image that isn't a an oficial docker image, but is still on Dockerhub, you can still leave out the registry address, but just include the namespace, which is the username of the account that manages the image.
+If you want to get an image that isn't a an official docker image, but is still on Dockerhub, you can still leave out the registry address, but just include the namespace, which is the username of the account that manages the image.
 
-For example we can download a container image pre-prepared with the Hugging Face Tranformers [library](https://huggingface.co/docs/transformers/index), with PyTorch dependency, set up for use on a GPU, which is managed by the Hugging Face team on Dockerhub with the command `docker pull huggingface/transformers-pytorch-gpu:4.28.1`
+For example we can download a container image pre-prepared with the Hugging Face Transformers [library](https://huggingface.co/docs/transformers/index), with PyTorch dependency, set up for use on a GPU, which is managed by the Hugging Face team on Dockerhub with the command `docker pull huggingface/transformers-pytorch-gpu:4.28.1`
 
 :::info Note
 
