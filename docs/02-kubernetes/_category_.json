@@ -2,6 +2,7 @@
   "label": "Kubernetes",
   "position": 2,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "Time to scale our containers with Kubernetes!"
   }
 }
