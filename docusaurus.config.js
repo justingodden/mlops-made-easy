@@ -12,10 +12,10 @@ const config = {
   favicon: "img/icon.ico",
 
   // Set the production url of your site here
-  url: "https://justingodden.com",
+  url: "https://mlopsmadeeasy.com",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/mlops-made-easy/",
+  baseUrl: "/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -151,7 +151,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         // https://prismjs.com/#supported-languages
-        additionalLanguages: ["docker", "ignore"],
+        additionalLanguages: ["docker", "ignore", "yaml"],
       },
     }),
 };
