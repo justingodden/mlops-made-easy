@@ -31,7 +31,7 @@ The `python` image is another popular base image (that we will use later). But c
 
 ## First Dockerfile
 
-Let's create our first Dockerfile. Wee'll keep it nice and simple to learn the main commands with the Docker CLI. Create a file name 'Dockerfile' in your working directory and copy the code below into it.
+Let's create our first Dockerfile. Wee'll keep it nice and simple to learn the main commands with the Docker CLI. Create a file named 'Dockerfile' in your working directory and copy the code below into it.
 
 ```dockerfile title="Dockerfile"
 FROM nginx
