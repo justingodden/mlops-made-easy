@@ -55,7 +55,7 @@ A K8s cluster has a _control plane_ and a _data plane_. The control plane is the
 
 ## Kubernetes Objects
 
-Just like a [`Dockerfile`](../containers/docker-custom-containers#dockerfile-1) provides a definition for a containerized application, Kubernetes uses **manifests** (as YAML files) to describe the various **objects** that it manages. Kubernetes has a series of objects that are abstractions which manage or represent different functionality.
+Just like a [`Dockerfile`](../containers/docker-custom-containers#dockerfile-1) provides a definition for a containerized application, Kubernetes uses **manifests** (as YAML files) to describe the various **objects** that it manages. Kubernetes has a series of objects that are abstractions which manage or represent different functionality. There are many of them, but we'll look at the most important ones below.
 
 Don't worry when you see all the YAML. Firstly, you absolutely don't need to remember them off by heart, it's more important to just get an idea of the concepts, and then you can Google the YAML when you need it to copy and paste and amend to your needs (Kubernetes has great documentation). Secondly, we're continuing with a bit more theory. We'll get our hands dirty in the next section, but Kubernetes is a big topic and it's important we get at least a foundation down first.
 
@@ -157,8 +157,6 @@ spec:
 
 `Jobs` are yet another abstraction over pods and are used to manage workloads that aren't meant to run forever like a web server. As the name implies, they're good for managing jobs, e.g. you have a pod that does some data extraction and you only need it to run once and then stop. This can also be done with just a pod definition manifest, but using a job has some extra features like managing retries, how long to wait before you start the workload, etc.
 
-There is also a `CronJob` object which manages jobs and can schedule them using [cron](https://en.wikipedia.org/wiki/Cron), e.g. run this job daily at midnight.
-
 ```yaml
 apiVersion: batch/v1
 kind: Job
@@ -173,6 +171,8 @@ spec:
           command: ["perl", "-Mbignum=bpi", "-wle", "print bpi(2000)"]
       restartPolicy: Never
 ```
+
+There is also a `CronJob` object which manages jobs and can schedule them using [cron](https://en.wikipedia.org/wiki/Cron), e.g. run this job daily at midnight.
 
 ### Namespaces
 
