@@ -143,9 +143,9 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Justin Godden`,
       },
       colorMode: {
-        defaultMode: "dark",
+        defaultMode: "light",
         disableSwitch: false,
-        respectPrefersColorScheme: false,
+        respectPrefersColorScheme: true,
       },
       prism: {
         theme: lightCodeTheme,
