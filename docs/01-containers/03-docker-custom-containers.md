@@ -98,8 +98,7 @@ Copy the code below into a file called `app.py` in your working directory.
 import streamlit as st
 import pandas as pd
 
-url = ("https://raw.githubusercontent.com/justingodden/mlops-made-easy/"
-"master/project-code/01-containers/streamlit-project/vgsales.csv")
+url = ("https://raw.githubusercontent.com/justingodden/mlops-made-easy-project-code/master/01-containers/streamlit-project/vgsales.csv")
 
 @st.cache_data
 def load_data(url):
