@@ -1,6 +1,6 @@
 {
-  "label": "Model Repository",
-  "position": 10,
+  "label": "Data Versioning",
+  "position": 9,
   "link": {
     "type": "generated-index"
   }

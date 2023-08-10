@@ -1,6 +1,6 @@
 {
-  "label": "Auto ML",
-  "position": 11,
+  "label": "Model Serving",
+  "position": 13,
   "link": {
     "type": "generated-index"
   }
